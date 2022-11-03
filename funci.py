@@ -15,4 +15,9 @@ with open("outputs/result.txt",'w+') as f:
 	f.write(ner_results)
 
 f.close()
-	
+
+
+
+
+
+
