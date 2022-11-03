@@ -3,4 +3,5 @@ dependencies:
   - numpy
   - pandas
   - boto3
-  - pysnooper
+  - pytorch
+  - transformers
