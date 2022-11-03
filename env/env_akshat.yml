@@ -1,0 +1,5 @@
+name: env_akshat
+dependencies:
+  - boto3
+  - transformers
+  - torch
