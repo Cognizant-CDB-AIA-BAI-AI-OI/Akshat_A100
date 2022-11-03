@@ -1,5 +1,6 @@
 name: env_akshat
 dependencies:
+  - numpy
+  - pandas
   - boto3
-  - transformers
-  - torch
+  - pysnooper
