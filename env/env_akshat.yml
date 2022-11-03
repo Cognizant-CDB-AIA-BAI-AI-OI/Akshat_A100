@@ -5,3 +5,4 @@ dependencies:
   - boto3
   - pytorch
   - transformers
+  - pysnooper
