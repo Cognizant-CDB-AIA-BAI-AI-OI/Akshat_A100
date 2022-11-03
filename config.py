@@ -7,3 +7,8 @@ def config():
     subprocess.run('conda env remove -n env_akshat',shell =True)
   except :
     print("Something went wrong")
+
+    
+    
+    
+    
