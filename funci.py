@@ -1,21 +1,25 @@
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 from transformers import pipeline
-tokenizer = AutoTokenizer.from_pretrained("fidukm34/biobert_v1.1_pubmed-finetuned-ner-finetuned-ner")
+import pysnooper
 
-model = AutoModelForTokenClassification.from_pretrained("fidukm34/biobert_v1.1_pubmed-finetuned-ner-finetuned-ner")
-nlp = pipeline("ner", model=model, tokenizer=tokenizer)
+@pysnooper.snoop('outputs/file.log')
 
-with open("Akshat_A100/example.txt", 'r') as f:
-	example = f.read()
-f.close()
+def adder():
+	tokenizer = AutoTokenizer.from_pretrained("fidukm34/biobert_v1.1_pubmed-finetuned-ner-finetuned-ner")
+	model = AutoModelForTokenClassification.from_pretrained("fidukm34/biobert_v1.1_pubmed-finetuned-ner-finetuned-ner")
+	nlp = pipeline("ner", model=model, tokenizer=tokenizer)
 
-ner_results = nlp(example)
+	with open("Akshat_A100/example.txt", 'r') as f:
+		example = f.read()
+		f.close()
 
-with open("outputs/result.txt",'w+') as f:
-	f.write(ner_results)
+	ner_results = nlp(example)
 
-f.close()
+	with open("outputs/result.txt",'w+') as f:
+		f.write(ner_results)
 
+	f.close()
+adder()
 
 
 
