@@ -16,7 +16,7 @@ def adder():
 	ner_results = nlp(example)
 
 	with open("outputs/result.txt",'w+') as f:
-		f.write(ner_results)
+		f.write(str(ner_results))
 
 	f.close()
 adder()
